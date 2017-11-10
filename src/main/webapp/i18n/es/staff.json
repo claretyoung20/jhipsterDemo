@@ -1,0 +1,23 @@
+{
+    "entityDemoApp": {
+        "staff" : {
+            "home": {
+                "title": "Staff",
+                "createLabel": "Crear nuevo Staff",
+                "createOrEditLabel": "Crear o editar Staff"
+            },
+            "created": "Un nuevo Staff ha sido creado con el identificador {{ param }}",
+            "updated": "Un Staff ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Staff ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Staff {{ id }}?"
+            },
+            "detail": {
+                "title": "Staff"
+            },
+            "staffName": "Staff Name",
+            "password": "Password",
+            "department": "Department"
+        }
+    }
+}

@@ -8,14 +8,14 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A DTO for the Student entity.
+ * A DTO for the Staff entity.
  */
-public class StudentDTO implements Serializable {
+public class StaffDTO implements Serializable {
 
     private Long id;
 
     @NotNull
-    private String studentName;
+    private String staffName;
 
     @NotNull
     private String password;
@@ -32,12 +32,12 @@ public class StudentDTO implements Serializable {
         this.id = id;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getStaffName() {
+        return staffName;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
     }
 
     public String getPassword() {
@@ -73,11 +73,11 @@ public class StudentDTO implements Serializable {
             return false;
         }
 
-        StudentDTO studentDTO = (StudentDTO) o;
-        if(studentDTO.getId() == null || getId() == null) {
+        StaffDTO staffDTO = (StaffDTO) o;
+        if(staffDTO.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), studentDTO.getId());
+        return Objects.equals(getId(), staffDTO.getId());
     }
 
     @Override
@@ -87,9 +87,9 @@ public class StudentDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "StudentDTO{" +
+        return "StaffDTO{" +
             "id=" + getId() +
-            ", studentName='" + getStudentName() + "'" +
+            ", staffName='" + getStaffName() + "'" +
             ", password='" + getPassword() + "'" +
             "}";
     }

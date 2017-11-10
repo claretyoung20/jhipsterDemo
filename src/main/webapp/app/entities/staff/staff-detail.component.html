@@ -1,0 +1,35 @@
+
+<div *ngIf="staff">
+    <h2><span jhiTranslate="entityDemoApp.staff.detail.title">Staff</span> {{staff.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="entityDemoApp.staff.staffName">Staff Name</span></dt>
+        <dd>
+            <span>{{staff.staffName}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.staff.password">Password</span></dt>
+        <dd>
+            <span>{{staff.password}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.staff.department">Department</span></dt>
+        <dd>
+            <div *ngIf="staff.departmentId">
+                <a [routerLink]="['/department', staff.departmentId]">{{staff.departmentId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'staff/'+ staff.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

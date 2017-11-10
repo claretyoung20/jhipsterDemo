@@ -1,29 +1,30 @@
 package com.demo.service.mapper;
 
 import com.demo.domain.*;
-import com.demo.service.dto.StudentDTO;
+import com.demo.service.dto.StaffDTO;
 
 import org.mapstruct.*;
 
 /**
- * Mapper for the entity Student and its DTO StudentDTO.
+ * Mapper for the entity Staff and its DTO StaffDTO.
  */
 @Mapper(componentModel = "spring", uses = {DepartmentMapper.class})
-public interface StudentMapper extends EntityMapper<StudentDTO, Student> {
+public interface StaffMapper extends EntityMapper<StaffDTO, Staff> {
 
     @Mapping(source = "department.id", target = "departmentId")
     @Mapping(source = "department.departmentName", target = "departmentName")
-    StudentDTO toDto(Student student);
+    StaffDTO toDto(Staff staff);
 
     @Mapping(source = "departmentId", target = "department")
-    Student toEntity(StudentDTO studentDTO);
+    @Mapping(source = "departmentName", target = "department.departmentName")
+    Staff toEntity(StaffDTO staffDTO);
 
-    default Student fromId(Long id) {
+    default Staff fromId(Long id) {
         if (id == null) {
             return null;
         }
-        Student student = new Student();
-        student.setId(id);
-        return student;
+        Staff staff = new Staff();
+        staff.setId(id);
+        return staff;
     }
 }
