@@ -1,0 +1,30 @@
+{
+    "entityDemoApp": {
+        "request" : {
+            "home": {
+                "title": "Requests",
+                "createLabel": "Crear nuevo Request",
+                "createOrEditLabel": "Crear o editar Request"
+            },
+            "created": "Un nuevo Request ha sido creado con el identificador {{ param }}",
+            "updated": "Un Request ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Request ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Request"
+            },
+            "requestTitle": "Request Title",
+            "dateCreated": "Date Created",
+            "dateClosed": "Date Closed",
+            "requestContent": "Request Content",
+            "requestStatus": "Request Status",
+            "requestSolution": "Request Solution",
+            "attachmentName": "Attachment Name",
+            "department": "Department",
+            "staff": "Staff",
+            "student": "Student"
+        }
+    }
+}

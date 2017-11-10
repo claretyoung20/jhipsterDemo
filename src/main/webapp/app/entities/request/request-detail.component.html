@@ -1,0 +1,67 @@
+
+<div *ngIf="request">
+    <h2><span jhiTranslate="entityDemoApp.request.detail.title">Request</span> {{request.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="entityDemoApp.request.requestTitle">Request Title</span></dt>
+        <dd>
+            <span>{{request.requestTitle}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.dateCreated">Date Created</span></dt>
+        <dd>
+            <span>{{request.dateCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.dateClosed">Date Closed</span></dt>
+        <dd>
+            <span>{{request.dateClosed | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.requestContent">Request Content</span></dt>
+        <dd>
+            <span>{{request.requestContent}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.requestStatus">Request Status</span></dt>
+        <dd>
+            <span>{{request.requestStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.requestSolution">Request Solution</span></dt>
+        <dd>
+            <span>{{request.requestSolution}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.attachmentName">Attachment Name</span></dt>
+        <dd>
+            <span>{{request.attachmentName}}</span>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.department">Department</span></dt>
+        <dd>
+            <div *ngIf="request.departmentId">
+                <a [routerLink]="['/department', request.departmentId]">{{request.departmentDepartmentName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.staff">Staff</span></dt>
+        <dd>
+            <div *ngIf="request.staffId">
+                <a [routerLink]="['/staff', request.staffId]">{{request.staffStaffName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="entityDemoApp.request.student">Student</span></dt>
+        <dd>
+            <div *ngIf="request.studentId">
+                <a [routerLink]="['/student', request.studentId]">{{request.studentStudentName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'request/'+ request.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

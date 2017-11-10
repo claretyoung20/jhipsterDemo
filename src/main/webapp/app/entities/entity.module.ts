@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { EntityDemoDepartmentModule } from './department/department.module';
 import { EntityDemoStudentModule } from './student/student.module';
 import { EntityDemoStaffModule } from './staff/staff.module';
+import { EntityDemoRequestModule } from './request/request.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -10,6 +11,7 @@ import { EntityDemoStaffModule } from './staff/staff.module';
         EntityDemoDepartmentModule,
         EntityDemoStudentModule,
         EntityDemoStaffModule,
+        EntityDemoRequestModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

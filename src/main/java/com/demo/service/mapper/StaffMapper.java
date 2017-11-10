@@ -16,7 +16,6 @@ public interface StaffMapper extends EntityMapper<StaffDTO, Staff> {
     StaffDTO toDto(Staff staff);
 
     @Mapping(source = "departmentId", target = "department")
-    @Mapping(source = "departmentName", target = "department.departmentName")
     Staff toEntity(StaffDTO staffDTO);
 
     default Staff fromId(Long id) {

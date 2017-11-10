@@ -1,0 +1,30 @@
+{
+    "entityDemoApp": {
+        "request" : {
+            "home": {
+                "title": "Requests",
+                "createLabel": "Создать новый Request",
+                "createOrEditLabel": "Создать или отредактировать Request"
+            },
+            "created": "Новый Request создан с идентификатором {{ param }}",
+            "updated": "Request обновлен с идентификатором {{ param }}",
+            "deleted": "Request удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Request"
+            },
+            "requestTitle": "Request Title",
+            "dateCreated": "Date Created",
+            "dateClosed": "Date Closed",
+            "requestContent": "Request Content",
+            "requestStatus": "Request Status",
+            "requestSolution": "Request Solution",
+            "attachmentName": "Attachment Name",
+            "department": "Department",
+            "staff": "Staff",
+            "student": "Student"
+        }
+    }
+}

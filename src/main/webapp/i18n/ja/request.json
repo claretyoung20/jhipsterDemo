@@ -1,0 +1,30 @@
+{
+    "entityDemoApp": {
+        "request" : {
+            "home": {
+                "title": "Requests",
+                "createLabel": "Request を追加",
+                "createOrEditLabel": "Requestを追加または編集"
+            },
+            "created": "A new Request is created with identifier {{ param }}",
+            "updated": "A Request is updated with identifier {{ param }}",
+            "deleted": "A Request is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Request {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Request"
+            },
+            "requestTitle": "Request Title",
+            "dateCreated": "Date Created",
+            "dateClosed": "Date Closed",
+            "requestContent": "Request Content",
+            "requestStatus": "Request Status",
+            "requestSolution": "Request Solution",
+            "attachmentName": "Attachment Name",
+            "department": "Department",
+            "staff": "Staff",
+            "student": "Student"
+        }
+    }
+}

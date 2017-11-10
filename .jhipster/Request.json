@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "departmentName"
+        },
+        {
+            "relationshipName": "staff",
+            "otherEntityName": "staff",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "staffName"
+        },
+        {
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "studentName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "requestTitle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dateClosed",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "requestContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "requestStatus",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "requestSolution",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "attachmentName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171110103246",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "request",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

@@ -1,0 +1,94 @@
+<div>
+    <h2>
+        <span jhiTranslate="entityDemoApp.request.home.title">Requests</span>
+        <button class="btn btn-primary float-right jh-create-entity create-request" [routerLink]="['/', { outlets: { popup: ['request-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="entityDemoApp.request.home.createLabel">
+            Create new Request
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="requests">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="requestTitle"><span jhiTranslate="entityDemoApp.request.requestTitle">Request Title</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateCreated"><span jhiTranslate="entityDemoApp.request.dateCreated">Date Created</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dateClosed"><span jhiTranslate="entityDemoApp.request.dateClosed">Date Closed</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="requestContent"><span jhiTranslate="entityDemoApp.request.requestContent">Request Content</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="requestStatus"><span jhiTranslate="entityDemoApp.request.requestStatus">Request Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="requestSolution"><span jhiTranslate="entityDemoApp.request.requestSolution">Request Solution</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="attachmentName"><span jhiTranslate="entityDemoApp.request.attachmentName">Attachment Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentDepartmentName"><span jhiTranslate="entityDemoApp.request.department">Department</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="staffStaffName"><span jhiTranslate="entityDemoApp.request.staff">Staff</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="studentStudentName"><span jhiTranslate="entityDemoApp.request.student">Student</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let request of requests ;trackBy: trackId">
+                <td><a [routerLink]="['../request', request.id ]">{{request.id}}</a></td>
+                <td>{{request.requestTitle}}</td>
+                <td>{{request.dateCreated | date:'medium'}}</td>
+                <td>{{request.dateClosed | date:'medium'}}</td>
+                <td>{{request.requestContent}}</td>
+                <td>{{request.requestStatus}}</td>
+                <td>{{request.requestSolution}}</td>
+                <td>{{request.attachmentName}}</td>
+                <td>
+                    <div *ngIf="request.departmentId">
+                        <a [routerLink]="['../department', request.departmentId  ]" >{{request.departmentDepartmentName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="request.staffId">
+                        <a [routerLink]="['../staff', request.staffId  ]" >{{request.staffStaffName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="request.studentId">
+                        <a [routerLink]="['../student', request.studentId  ]" >{{request.studentStudentName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../request', request.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'request/'+ request.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'request/'+ request.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="requests && requests.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>
