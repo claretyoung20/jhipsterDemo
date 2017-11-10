@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "departmentName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171110094629",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "department",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}
