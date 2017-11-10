@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "department",
+            "otherEntityName": "department",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "departmentName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "studentName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171110095817",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "student",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

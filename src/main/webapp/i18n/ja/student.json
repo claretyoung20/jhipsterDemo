@@ -1,0 +1,23 @@
+{
+    "entityDemoApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Student を追加",
+                "createOrEditLabel": "Studentを追加または編集"
+            },
+            "created": "A new Student is created with identifier {{ param }}",
+            "updated": "A Student is updated with identifier {{ param }}",
+            "deleted": "A Student is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Student {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "studentName": "Student Name",
+            "password": "Password",
+            "department": "Department"
+        }
+    }
+}
